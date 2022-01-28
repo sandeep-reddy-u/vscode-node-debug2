@@ -974,7 +974,7 @@ function detectSupportedDebugArgsForLaunch(config: ILaunchRequestArguments, runt
     } else {
         // only determine version if no runtimeExecutable is set (and 'node' on PATH is used)
         logger.log('Spawning `node --version` to determine supported debug args');
-        let result: cp.SpawnSyncReturns<string>;
+        let result: cp.SpawnSyncReturns<Buffer>;
         try {
             result = cp.spawnSync(runtimeExecutable, ['--version']);
         } catch (e) {
